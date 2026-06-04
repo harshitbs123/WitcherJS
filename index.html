@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WitcherJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    
+    <div
+      class="sliderscreen h-screen w-full bg-zinc-800 flex flex-col items-center text-white justify-center"
+    >
+      <div class="absolute top-10 right-10">
+        <a href="https://www.thewitcher.com/in/en">
+          <img
+            src="assets/kaer-morhen.png"
+            alt=""
+            class="h-30 cursor-pointer transition-all duration-700 hover:shadow-2xl"
+          />
+        </a>
+      </div>
+      <div class="absolute top-10 left-10">
+        <button
+          class="darkbtn border-[1px] px-6 py-1 cursor-pointer rounded-full"
+        >
+          DARK MODE
+        </button>
+      </div>
+      <div>
+        <button class="up border p-3 rounded-full m-3 cursor-pointer">
+          <i class="fa-solid fa-chevron-up"></i>
+        </button>
+      </div>
+      <div class="slider overflow-hidden rounded-lg shadow-xl shadow-black">
+        <div class="scaleHover hover:scale-105 duration-500 transition-all">
+          <div class="imagesss h-[500px] transition-all duration-1000">
+            <img src="assets/1920x1080_v1.png" alt="" class="h-[500px]" />
+            <img src="assets/3840x2160_EN.png" alt="" class="h-[500px]" />
+            <img
+              src="assets/73e37320a96891d8a7d89aba1e685baffac1b664.png"
+              alt=""
+              class="h-[500px]"
+            />
+            <img
+              src="assets/812de459d3975dd42ba5f22c55fc35df9933f80c.png"
+              alt=""
+              class="h-[500px]"
+            />
+            <img
+              src="assets/8bee634fb6d35dab951469b6b84e28d891d7f57a.png"
+              alt=""
+              class="h-[500px]"
+            />
+            <img
+              src="assets/965e3be5eea12774a575af58cf6db3479d101fc1.png"
+              alt=""
+              class="h-[500px]"
+            />
+            <img
+              src="assets/9c65a15b1117c4549f94688895d80cf18adc7ebf.png"
+              alt=""
+              class="h-[500px]"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="down border p-3 rounded-full m-3 cursor-pointer">
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+      </div>
+      <div class="end absolute bottom-0 right-0">
+        <p class="text-[10px] text-end">
+          The Witcher 3: Wild Hunt is an open-world<br />
+          action role-playing game developed by CD Projekt Red.<br />
+          Players take on the role of Geralt of Rivia, a skilled monster
+          hunterknown as a <br />
+          Witcher, with world filled with dangerous creatures, political
+          conflicts, and memorable characters.
+        </p>
+      </div>
+    </div>
+
+    <!-- map -->
+    <div
+      class="sliderscreen h-screen w-full bg-zinc-900 flex flex-col items-center justify-center text-white relative"
+    >
+      <!--  -->
+      <!-- Background Image -->
+      <img
+        src="assets/back.png"
+        class="absolute inset-0 w-full h-full object-cover bottom-9"
+        alt=""
+      />
+
+      <!-- Dark Overlay + Blur -->
+      <div class="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
+      <!--  -->
+      <div
+        class="box absolute top-[14.5%] left-[15.2%] bg-black/20 backdrop-blur-sm p-4 rounded-lg z-10 w-[35vh] pointer-events-none transition-all duration-800 ease-in-out"
+      >
+        <img id="locationImg" src="assets/map.JPG" class="w-100 rounded" />
+
+        <h2 id="locationName" class="text-lg font-bold mt-2 text-center">
+          The Continent
+        </h2>
+
+        <p id="locationDesc" class="mt-2 text-xs"></p>
+
+        <p id="locationStory" class="text-gray-300 mt-2 text-xs"></p>
+      </div>
+      <div
+        class="worldmap relative transition-all duration-700 hover:shadow-[0_0_5px_rgba(212,175,55,0.8)]"
+      >
+        <img src="assets/world map.png" alt="" class="h-[75vh] rounded-lg" />
+
+        <div
+          class="pointer novigrad absolute top-[14.5%] left-[51.5%] border p-5 cursor-pointer rounded-b-3xl"
+        >
+          📍
+        </div>
+        <div
+          class="pointer velen absolute top-[30.5%] left-[51.5%] border p-5 cursor-pointer rounded-b-3xl"
+        >
+          📍
+        </div>
+        <div
+          class="pointer skellige absolute top-[50.5%] left-[30%] border p-5 cursor-pointer rounded-b-3xl"
+        >
+          📍
+        </div>
+        <div
+          class="pointer whiteorchard absolute top-[32%] left-[69.7%] border p-5 cursor-pointer rounded-b-3xl"
+        >
+          📍
+        </div>
+        <div
+          class="pointer royal absolute top-[43.5%] left-[61.5%] border p-5 cursor-pointer rounded-b-3xl"
+        >
+          📍
+        </div>
+        <div
+          class="pointer toussaint absolute top-[84.5%] left-[76%] border p-5 cursor-pointer rounded-b-3xl"
+        >
+          📍
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
