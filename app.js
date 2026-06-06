@@ -94,7 +94,7 @@ velen.addEventListener("mouseenter", () => {
 });
 novigrad.addEventListener("mouseenter", () => {
   box.style.left = "24%";
-  box.style.top = "3%";
+  box.style.top = "10%";
   box.classList.remove("w-[50vh]");
   box.classList.add("w-[50vh]");
   mapImg.src = "assets/novigrad.png";
@@ -106,7 +106,7 @@ novigrad.addEventListener("mouseenter", () => {
 });
 skellige.addEventListener("mouseenter", () => {
   box.style.left = "9.5%";
-  box.style.top = "26%";
+  box.style.top = "15%";
   box.classList.remove("w-[50vh]");
   box.classList.add("w-[50vh]");
   mapImg.src = "assets/skellige.png";
@@ -130,7 +130,7 @@ whiteorchard.addEventListener("mouseenter", () => {
 });
 royal.addEventListener("mouseenter", () => {
   box.style.left = "31.5%";
-  box.style.top = "30%";
+  box.style.top = "20%";
   box.classList.remove("w-[50vh]");
   box.classList.add("w-[50vh]");
   place.innerText = "ROYAL PALACE IN VIZIMA";
@@ -169,3 +169,234 @@ skellige.addEventListener("mouseleave", resetBox);
 whiteorchard.addEventListener("mouseleave", resetBox);
 royal.addEventListener("mouseleave", resetBox);
 toussaint.addEventListener("mouseleave", resetBox);
+
+//game
+
+const nameEl = document.querySelector(".name");
+const textEl = document.querySelector(".text");
+const bg = document.querySelector(".background");
+const char1 = document.querySelector(".character");
+const char2 = document.querySelector(".character2");
+const nextBtn = document.querySelector(".next");
+const questEl = document.querySelector(".scene .quest span");
+
+const scenes = [
+  {
+    name: "...",
+    text: "",
+    bg: "assets/game/kaer.jpg",
+    char1: "",
+    char2: "",
+    quest: "KAER MORHEN",
+  },
+  {
+    name: "Kaer Morhen",
+    text: "",
+    bg: "assets/game/kaer.jpg",
+    char1: "",
+    char2: "",
+    quest: "KAER MORHEN",
+  },
+
+  {
+    name: "Beauty hidden in the valleys of kaedwen",
+    text: "",
+    bg: "assets/game/kaer.jpg",
+    char1: "",
+    char2: "",
+    quest: "KAER MORHEN",
+  },
+  {
+    name: "...",
+    text: "",
+    bg: "assets/game/room.jpg",
+    char1: "",
+    char2: "",
+    quest: "KAER MORHEN",
+  },
+  {
+    name: "",
+    text: "(A knock on the door.)",
+    bg: "assets/game/room.jpg",
+    char1: "",
+    char2: "",
+    quest: "Geralt's room",
+  },
+    {
+    name: "????",
+    text: "Geralt, awake?",
+    bg: "assets/game/room.jpg",
+    char1: "",
+    char2: "",
+    quest: "Geralt's room",
+  },
+  {
+    name: "????",
+    text: "heyyyy",
+    bg: "assets/game/room.jpg",
+    char1: "",
+    char2: "",
+    quest: "KAER MORHEN",
+  },
+  {
+    name: "???????",
+    text: "Geralt , uu theree????",
+    bg: "assets/game/room.jpg",
+    char1: "",
+    char2: "",
+    quest: "KAER MORHEN",
+  },
+  {
+    name: "???",
+    text: "Itsss Meee Trisss",
+    bg: "assets/game/room.jpg",
+    char1: "",
+    char2: "",
+    quest: "KAER MORHEN",
+  },
+  {
+    name: "Triss",
+    text: "I am Entering in noww",
+    bg: "assets/game/room.jpg",
+    char1: "",
+    char2: "",
+    quest: "KAER MORHEN",
+  },
+  {
+    name: "Triss",
+    text: "Heyyy !! There u are",
+    bg: "assets/game/room.jpg",
+    char1: "",
+    char2: "assets/game/triss.png",
+    quest: "KAER MORHEN",
+  },
+   {
+    name: "GERALT",
+    text: "Hey Triss , what's up?",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "Triss",
+    text: "Geralt ! There was something important i had to inform you",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "GERALT",
+    text: "Another quiet night. That's usually when trouble starts.",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "GERALT",
+    text: "So What is it? If its not important i would prefer me joining me in bed",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "TRISS",
+    text: "Thats A offer i would take you upon... BUT",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "TRISS",
+    text: "Vesemir received word about a contract in Velen.",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "GERALT",
+    text: "Then I suppose sleep will have to wait.",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "TRISS",
+    text: "Try not to get yourself killed.",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "GERALT",
+    text: "You'd miss me too much.",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "TRISS",
+    text: "Don't make me admit it.",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+   {
+    name: "GERALT",
+    text: "Guess i have to go....",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "GERALT",
+    text: "Must be important if Vesemit was this much eager",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+  {
+    name: "TRISS",
+    text: "MmmHmmm , You should go now",
+    bg: "assets/game/room.jpg",
+    char1: "assets/game/geralt.jpeg",
+    char2: "assets/game/triss.png",
+    quest: "Geralt's room",
+  },
+];
+let current = 0;
+function render() {
+  const scene = scenes[current];
+
+  nameEl.textContent = scene.name;
+  textEl.textContent = scene.text;
+  questEl.textContent = scene.quest || "";
+
+  bg.src = scene.bg;
+  char1.src = scene.char1;
+  char2.src = scene.char2;
+}
+nextBtn.addEventListener("click", () => {
+  if (current < scenes.length - 1) {
+    current++;
+    render();
+
+    if (current === scenes.length - 1) {
+      nextBtn.textContent = "THE END";
+    }
+  } else {
+    nextBtn.disabled = true;
+  }
+});
+render();

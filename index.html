@@ -9,10 +9,23 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <link rel="icon" type="image/png" href="assets/kaer-morhen.png">
+    <link rel="icon" type="image/png" href="assets/kaer-morhen.png" />
+    <!-- font -->
+     <style>
+      /* AALTO */
+      @font-face {
+        font-family: "pear";
+        src: url("./assets/game/pear/pear.otf") format("opentype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .pear-font {
+        font-family: "pear", serif;
+      }
+      </style>
   </head>
   <body>
-    
     <div
       class="sliderscreen h-screen w-full bg-zinc-800 flex flex-col items-center text-white justify-center"
     >
@@ -152,7 +165,42 @@
         </div>
       </div>
     </div>
+    <!-- game -->
+<div class="scene w-full h-screen flex flex-col items-center justify-center bg-black pear-font">
+  <div class="quest w-[20%] h-[30px] bg-red-700 mb-4 text-xl px-2 rounded-lg text-white">Quest:
+    <span class="quest"></span>
+  </div>
 
+  <div class="theatre relative w-[85%] h-[75%] overflow-hidden rounded-xl bg-white border-[0.5px] border-white">
+
+    <img class="background absolute inset-0 w-full h-full " src="assets/game/kaer.jpg">
+
+    <img class="character absolute bottom-0 left-[10%] h-[90%]" src="">
+
+    <img class="character2 absolute bottom-0 right-[10%] h-[95%]" src="">
+
+    <div class="dialogue-box absolute bottom-0 left-0
+                w-full h-[120px]
+                bg-black/50 backdrop-blur-md
+                border-t border-yellow-500/20">
+
+      <div class="name text-yellow-500 text-xl p-4">
+        GERALT
+      </div>
+
+      <div class="text text-white px-4">
+        Can't sleep...
+      </div>
+
+      <button class="next absolute text-xl right-6 bottom-6 border-white border text-white bg-black px-5 py-1 rounded-xl">
+        Next
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
     <script src="app.js"></script>
   </body>
 </html>
